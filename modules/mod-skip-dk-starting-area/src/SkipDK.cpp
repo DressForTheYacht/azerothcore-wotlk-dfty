@@ -178,7 +178,7 @@ public:
         PLAYERHOOK_ON_FIRST_LOGIN
     }) { }
 
-    void OnFirstLogin(Player* player) override
+    void OnPlayerFirstLogin(Player* player) override
     {
         if (player->getClass() == 6)
         {

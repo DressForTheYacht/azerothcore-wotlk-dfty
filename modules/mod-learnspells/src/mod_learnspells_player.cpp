@@ -2,19 +2,19 @@
 
 #include "mod_learnspells.h"
 
-void LearnSpells::OnLevelChanged(Player* player, uint8 /*oldLevel*/)
+void LearnSpells::OnPlayerLevelChanged(Player* player, uint8 /*oldLevel*/)
 {
     //LearnAllSpells(player);
     //MaxAllSkills(player);
 }
 
-void LearnSpells::OnCreate(Player* player)
+void LearnSpells::OnPlayerCreate(Player* player)
 {
     //LearnAllSpells(player);
     //MaxAllSkills(player);
 }
 
-void LearnSpells::OnLogin(Player* player)
+void LearnSpells::OnPlayerLogin(Player* player)
 {
     LearnAllSpells(player);
     MaxAllSkills(player);
