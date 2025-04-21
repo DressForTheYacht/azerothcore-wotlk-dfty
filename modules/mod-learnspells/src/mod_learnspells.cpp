@@ -2,7 +2,7 @@
 
 LearnSpells::LearnSpells() : PlayerScript("LearnSpellsPlayerScript"), WorldScript("LearnSpellsWorldScript") {}
 
-void Addmod_learnspells_masterScripts()
+void Addmod_learnspellsScripts()
 {
     new LearnSpells();
 }
