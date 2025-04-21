@@ -2468,6 +2468,11 @@ void Player::GiveXP(uint32 xp, Unit* victim, float group_rate, bool isLFGReward)
     SetUInt32Value(PLAYER_XP, newXP);
 }
 
+void Player::ResetXP()
+{
+    SetUInt32Value(PLAYER_XP, 0);
+}
+
 // Update player to next level
 // Current player experience not update (must be update by caller)
 void Player::GiveLevel(uint8 level)
