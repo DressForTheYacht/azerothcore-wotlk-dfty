@@ -1074,7 +1074,13 @@ void Player::setDeathState(DeathState s, bool /*despawn = false*/)
     if (IsAlive() && !cur)
         //clear aura case after resurrection by another way (spells will be applied before next death)
         SetUInt32Value(PLAYER_SELF_RES_SPELL, 0);
+
+    if (s == DeathState::Alive)
+    {
+        SetSpeed(MOVE_RUN, 1.0f, true); // TB: Restore normal run speed on alive
+    }
 }
+
 
 void Player::SetRestState(uint32 triggerId)
 {
@@ -4483,6 +4489,7 @@ void Player::BuildPlayerRepop()
     GetMap()->AddToMap(corpse);
     SetHealth(1); // convert player body to ghost
     SetMovement(MOVE_WATER_WALK);
+    SetSpeed(MOVE_RUN, 4.0f, true); // TB: 4x run speed as ghost
     SetWaterWalking(true);
     if (!GetSession()->isLogingOut())
     {
